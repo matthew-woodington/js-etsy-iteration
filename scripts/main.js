@@ -12,8 +12,8 @@ console.log(`The average price is $${averagePrice.toFixed(2)}`);
 
 // 2. Show me how to get an array of items that cost between $14.00 and $18.00 USD. Please console.log the answer.
 
-const specificCostList = items.filter((product) => {
-  return product.price <= 18 && product.price >= 14;
+const specificCostList = items.filter((item) => {
+  return item.price <= 18 && item.price >= 14;
 });
 
 console.log(
@@ -47,7 +47,7 @@ const longMaterialList = items.filter((item) => {
   return item["materials"].length >= 8;
 });
 
-console.log(longMaterialList);
+// console.log(longMaterialList);
 
 longMaterialList.forEach((item) =>
   console.log(
