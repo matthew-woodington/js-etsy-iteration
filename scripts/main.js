@@ -40,3 +40,28 @@ const madeOfWood = items.filter((item) => {
 });
 
 console.log(`Items that are made of wood include:`, madeOfWood);
+
+// 5. Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
+
+const longMaterialList = items.filter((item) => {
+  return item["materials"].length >= 8;
+});
+
+console.log(longMaterialList);
+
+longMaterialList.forEach((item) =>
+  console.log(
+    `${item.title} has ${item.materials.length} materials`,
+    item.materials
+  )
+);
+
+// 6. Show me how to calculate how many items were made by their sellers. Please console.log your answer.
+
+const madeBySeller = items.filter((item) => {
+  return item["who_made"] === "i_did";
+});
+
+// console.log(madeBySeller);
+
+console.log(`${madeBySeller.length} items were made by their sellers`);
