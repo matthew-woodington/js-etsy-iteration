@@ -1,18 +1,19 @@
 // 1. Show me how to calculate the average price of all items. Please console.log the average
 
-const prices = items.map((num) => {
-  return num["price"];
-});
+// const _ = require("lodash");
 
-// console.log(prices);
+// const prices = items.map((num) => {
+//   return num["price"];
+// });
 
-const averagePrice = prices.reduce((acc, i) => acc + i) / prices.length;
+const prices = _.map(items, "price");
+const averagePrice = _.sum(prices) / prices.length;
 
 console.log(`The average price is $${averagePrice.toFixed(2)}`);
 
 // 2. Show me how to get an array of items that cost between $14.00 and $18.00 USD. Please console.log the answer.
 
-const specificCostList = items.filter((item) => {
+const specificCostList = _.filter(items, (item) => {
   return item.price <= 18 && item.price >= 14;
 });
 
@@ -23,9 +24,7 @@ console.log(
 
 // 3. Show me how find the item with a "GBP" currency code and print its name and price. Please console.log the one you find.
 
-const alternateCurrency = items.filter((item) => {
-  return item["currency_code"] === "GBP";
-});
+const alternateCurrency = _.filter(items, ["currency_code", "GBP"]);
 
 // console.log(alternateCurrency);
 
@@ -35,7 +34,7 @@ alternateCurrency.forEach((item) =>
 
 // 4. Show me how to find which items are made of wood. Please console.log the ones you find.
 
-const madeOfWood = items.filter((item) => {
+const madeOfWood = _.filter(items, (item) => {
   return item["materials"].includes("wood");
 });
 
@@ -43,7 +42,7 @@ console.log(`Items that are made of wood include:`, madeOfWood);
 
 // 5. Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
 
-const longMaterialList = items.filter((item) => {
+const longMaterialList = _.filter(items, (item) => {
   return item["materials"].length >= 8;
 });
 
@@ -58,9 +57,7 @@ longMaterialList.forEach((item) =>
 
 // 6. Show me how to calculate how many items were made by their sellers. Please console.log your answer.
 
-const madeBySeller = items.filter((item) => {
-  return item["who_made"] === "i_did";
-});
+const madeBySeller = _.filter(items, ["who_made", "i_did"]);
 
 // console.log(madeBySeller);
 
