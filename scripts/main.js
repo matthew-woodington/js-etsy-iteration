@@ -1,9 +1,5 @@
 // 1. Show me how to calculate the average price of all items. Please console.log the average
 
-// const prices = items.map((num) => {
-//   return num["price"];
-// });
-
 const prices = _.map(items, "price");
 const averagePrice = _.sum(prices) / prices.length;
 
