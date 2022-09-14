@@ -1,7 +1,5 @@
 // 1. Show me how to calculate the average price of all items. Please console.log the average
 
-// const _ = require("lodash");
-
 // const prices = items.map((num) => {
 //   return num["price"];
 // });
